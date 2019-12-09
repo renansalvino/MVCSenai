@@ -9,6 +9,7 @@ namespace RoleTopMVC.Controllers
 {
     public class AdministradorController : AbstractController
     {
+        PedidoRepository pedido = new PedidoRepository();
         ServicoRepository servicoRepository = new ServicoRepository ();
         public IActionResult Administrador()
         {
@@ -17,20 +18,20 @@ namespace RoleTopMVC.Controllers
             if (!ninguemLogado && 
             (uint) TiposUsuario.ADMINISTRADOR == uint.Parse(ObterUsuarioTipoSession())) {
 
-                var servicos = servicoRepository.ObterTodos ();
+                var pedidos = pedido.ObterTodos ();
                 DashboardViewModel dashboardViewModel = new DashboardViewModel ();
 
-                foreach (var servico in servicos) {
-                    switch (servicos.StatusPedido) {
-                        case (uint) StatusPedido.APROVADO:
+                foreach (var pedido in pedidos) {
+                    switch (pedido.Status) {
+                        case (int) StatusPedido.APROVADO:
                             dashboardViewModel.ServicosAprovados++;
                             break;
-                        case (uint) StatusPedido.REPROVADO:
+                        case (int) StatusPedido.REPROVADO:
                             dashboardViewModel.ServicosReprovados++;
                             break;
                         default:
                             dashboardViewModel.ServicosPendentes++;
-                            dashboardViewModel.Servicos.Add (servico);
+                            dashboardViewModel.Servicos.Add (pedido);
                             break;
                     }
                 }

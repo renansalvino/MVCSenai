@@ -2986,8 +2986,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\36591349880\\Desktop\\MVC\\RoleTopMVC\\Views\\Login\\Index.cshtml",
-      "TargetPath": "Views\\Login\\Index.cshtml",
+      "FilePath": "c:\\Users\\36591349880\\Desktop\\MVC\\RoleTopMVC\\Views\\login\\Index.cshtml",
+      "TargetPath": "Views\\login\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3041,8 +3041,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\36591349880\\Desktop\\MVC\\RoleTopMVC\\Views\\Login\\Historico.cshtml",
-      "TargetPath": "Views\\Login\\Historico.cshtml",
+      "FilePath": "c:\\Users\\36591349880\\Desktop\\MVC\\RoleTopMVC\\Views\\login\\Historico.cshtml",
+      "TargetPath": "Views\\login\\Historico.cshtml",
       "FileKind": "mvc"
     }
   ],

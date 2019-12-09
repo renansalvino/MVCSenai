@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
+using Microsoft.Extensions.Primitives;
 using RoleTopMVC.Models;
 
 
 namespace RoleTopMVC.Models {
     public class Pedido {
-
+       
         public ulong Id { get; set; }
         public Cliente Cliente { get; set; }
         public string NomeEvento { get; set; }
@@ -17,9 +18,7 @@ namespace RoleTopMVC.Models {
         public Servicos Som {get;set;}
         public uint Status {get;set;}
         public double PrecoTotal { get; set; }
-        
-      
-        
+        public StringValues Servico { get; internal set; }
 
         public Pedido(ulong id, Cliente cliente, string nomeEvento, string tipoEvento, DateTime dataEvento, int numeroConvidado, string obs,Servicos Iluminação, Servicos som, uint status, double precoTotal) 
         {
@@ -31,7 +30,7 @@ namespace RoleTopMVC.Models {
                 this.NumeroConvidado = numeroConvidado;
                 this.Obs = obs;
                 this.Som = som;
-                this.Status = status;
+                this.Status = 0;
                 this.PrecoTotal = precoTotal;
                
         }

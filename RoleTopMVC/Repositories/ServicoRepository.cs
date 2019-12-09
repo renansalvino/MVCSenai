@@ -9,13 +9,13 @@ using System.IO;
 
 namespace RoleTopMVC.Repositories {
     public class ServicoRepository : RepositoryBase {
-        public const string CAMINHO = "Database/Sservico.csv";
+        public const string CAMINHO = "Database/Servico.csv";
 
         public double ObterPrecoDe (string nomeServico) {
             var lista = ObterTodos ();
             var preco = 0.0;
             foreach (var item in lista) {
-                if (item.Servico .Equals (nomeServico)) {
+                if (item.Preco.Equals (nomeServico)) {
                     preco = item.Preco;
                     break;
                 }
@@ -23,18 +23,18 @@ namespace RoleTopMVC.Repositories {
             return preco;
         }
 
-        public List<Servicos> ObterTodos(){
+        public List<Produto> ObterTodos(){
 
-            List<Servicos> servicos = new List<Servicos>(); 
+            List<Produto> servicos = new List<Produto>(); 
 
         string[] linhas = File.ReadAllLines (CAMINHO);
         foreach (var linha in linhas) {
-            Produto se = new Produto();
-            
+            Produto servico = new Produto();
+          
             string[] dados = linha.Split (";");
-            se.Nome = dados[0];
-            se.Preco = double.Parse(dados[1]);
-            servicos.Add(s);
+            servico.Nome = dados[0];
+            servico.Preco = double.Parse(dados[1]);
+            servicos.Add(servico);
         }
 
         return servicos;

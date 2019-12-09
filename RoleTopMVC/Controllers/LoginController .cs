@@ -12,6 +12,7 @@ namespace RoleTopMVC.Controllers
 
         private ClienteRepository clienteRepository = new ClienteRepository();
         private ServicoRepository servicoRepository = new ServicoRepository();
+        private PedidoRepository pedidoRepository = new PedidoRepository();
 
         [HttpGet]
         public IActionResult Index()
@@ -98,11 +99,11 @@ namespace RoleTopMVC.Controllers
         public IActionResult Historico ()
         {
             var emailCliente = ObterUsuarioSession();
-            var servicosCliente = servicoRepository.ObterTodosPorCliente(emailCliente);
+            var servicosCliente = pedidoRepository.ObterTodosPorCliente(emailCliente);
 
             return View(new HistoricoViewModels()
             {
-                Servicos = servicosCliente,
+                pedidos = servicosCliente,
                 NomeView = "Histórico",
                 UsuarioEmail = ObterUsuarioSession(),
                 UsuarioNome = ObterUsuarioNomeSession()

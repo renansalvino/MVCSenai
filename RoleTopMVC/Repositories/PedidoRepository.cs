@@ -62,9 +62,9 @@ namespace RoleTopMVC.Repositories {
             return null;
         }
 
-        public bool Atualizar () {
+        public bool Atualizar (Pedido pedido) {
             var pedidosTotais = File.ReadAllLines (CAMINHO);
-            var pedidoCSV = PrepararPedidoCSV (pedido);
+            var pedidoCSV = PrepararServicoCSV (pedido);
             var linhaPedido = -1;
             var resultado = false;
 
@@ -84,9 +84,8 @@ namespace RoleTopMVC.Repositories {
 
             return resultado;
         }
-
-        private static string PrepararServicoCSV (Pedido servico) {
-            Servico servico = servico.Servico;
+        public string PrepararServicoCSV (Pedido servico) {
+            Pedido pedido = servico;
             return $"NomeEvento={servico.NomeEvento};tipoevento={servico.TipoEvento}; dataevento={servico.DataEvento}; numeroconvidado={servico.NumeroConvidado}; obs={servico.Obs}; ";
         }
     }

@@ -1,4 +1,4 @@
-using System.Diagnostics;
+using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RoleTopMVC.Enums;
@@ -14,7 +14,7 @@ namespace RoleTopMVC.Controllers {
 
         public IActionResult Index () {
             ServicosViewModel pedido = new ServicosViewModel ();
-            pedido.Servicos = servicoRepository.ObterTodos;
+            pedido.pedidos = pedidoRepository.ObterTodos();
 
             var usuarioLogado = ObterUsuarioSession ();
             var nomeUsuarioLogado = ObterUsuarioNomeSession ();
@@ -34,33 +34,33 @@ namespace RoleTopMVC.Controllers {
             Pedido pedido = new Pedido ();
 
             var Som = form["som"];
-            Servico servico = new Servico ();
-            servico.Nome = Som;
-            servico.Preco = servicoRepository.ObterPrecoDe (Som);
+            Produto som = new Produto ();
+            som.Nome = Som;
+            som.Preco = servicoRepository.ObterPrecoDe(Som);
 
             pedido.Servico = Som;
 
             var Iluminacao = form["iluminacao"];
-            Iluminação iluminacao = new Iluminação (
-                Iluminação,
-                pedidoRepository.ObterPrecoDe (Iluminação));
+            Produto Iluminação = new Produto ();
+            Iluminação.Nome = Iluminacao;
+            Iluminação.Preco = servicoRepository.ObterPrecoDe(Iluminacao);
 
-            pedido.Servico = Iluminação;
-
-            Pedido evento = new Pedido () {
+            pedido.Servico = Iluminacao;
+            Cliente cliente = new Cliente();
+            Pedido pedido1 = new Pedido () {
 
                 NomeEvento = form["tevento"],
                 TipoEvento = form["tipoevento"],
                 DataEvento = DateTime.Parse (form["dataevento"]),
-                NumeroConvidado = form["numeroconvidado"],
+                NumeroConvidado = int.Parse(form["numeroconvidado"]),
                 Obs = form["observacoes"],
             };
 
-            pedido.Cliente = cliente;
+            pedido.Cliente  = cliente;
 
             pedido.DataEvento = DateTime.Now;
 
-            pedido.PrecoTotal = servico.Preco + servico.Preco;
+            pedido.PrecoTotal = som.Preco + som.Preco;
 
             if (pedidoRepository.Inserir (pedido)) {
                 return View ("Sucesso", new RespostaViewModel () {
