@@ -1,0 +1,80 @@
+<main style= "padding-bottom: 10em;">
+                <div class="cavento">Cadastro do evento</div>
+
+                <form method="post" id="fcontato" action='@Url.Action("Registrar", "evento") '>
+                   
+        
+                        <p>
+                            <label for="cevento"> Nome do Evento:</label>
+                            <input type="text" name="tevento" id="cevento" placeholder="ex:Senai confraternização">
+                        </p>
+                        
+                   
+                            
+                            <p>
+                                    <label for="ctevento"> Tipo do evento:</label> 
+                                    <select type="text" name="tipoevento" id="ctevento">
+                                        <option>Casamento</option>
+                                        <option>Debutante</option>
+                                        <option>Corporativo</option>
+                                        <option>Aniversário</option>
+                                        <option>Bodas</option>
+                                        <option>Outros</option>
+                                    </select>
+                                        
+                                </p>        
+                               
+
+                                <p>
+                                        <label for="cdate"> Data do evento:</label>
+                                        <input type="date" name="dataevento" id="cdate" placeholder="exemplo: 25/05/2002">
+                                    </p>
+
+                                    <p>
+                                        <label for="cnumber">Número de convidados</label>
+                                        <input type="number" name="nuemroconvidado" id="cnumber" placeholder="nº de convidados">
+                                    </p>
+                                    
+                                    <p>
+                                        <label for= "cobservacoes">Obs:</label>
+                                        <input type="text" name="observacoes" id="cobservacoes">
+                                    </p>
+
+                                    <p>
+                                        
+                                        <label for= "csom">Valor de locaçâo do Rolê Top(R$10.000)</label>
+
+                                    
+                                    </p>
+                                    
+
+
+                                    
+                                    <p>
+                                        
+                                        <label for= "csom">Aparelho de som? (Valor fixo de R$3.000):</label>
+                                        <select type="text" name="som" id="csom">
+                                            <option>Sim</option>
+                                                <option>Não</option>
+                                                </select>
+                                    
+                                    </p>
+                                    
+                                    <p>
+                                            <label for= "cilu">Aparelho de iluminação? (Valor fixo de R$3.000):</label>
+                                            <select type="text" name="iluminacao" id="cilu">
+                                                <option>Sim</option>
+                                                    <option>Não</option>
+                                                    </select>
+                                    </p>
+                                    
+                                   
+                                       
+
+                       
+                                <input class='center' type="submit" value="Entrar!" />
+                            </form>
+
+                        </div>
+                          
+                        </main>
