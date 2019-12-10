@@ -47,7 +47,7 @@ namespace RoleTopMVC.Repositories {
                 servico.TipoEvento = ExtrairValorDoCampo ("tipoevento", linha);
                 servico.DataEvento = DateTime.Parse (ExtrairValorDoCampo ("dataevento", linha));
                 servico.NumeroConvidado = int.Parse (ExtrairValorDoCampo ("numeroconvidado", linha));
-                servico.Obs = ExtrairValorDoCampo ("obs", linha);
+                servico.Obs = ExtrairValorDoCampo ("observacoes", linha);
                 servicos.Add (servico);
             }
             return servicos;
@@ -86,7 +86,7 @@ namespace RoleTopMVC.Repositories {
         }
         public string PrepararServicoCSV (Pedido servico) {
             Pedido pedido = servico;
-            return $"NomeEvento={servico.NomeEvento};tipoevento={servico.TipoEvento}; dataevento={servico.DataEvento}; numeroconvidado={servico.NumeroConvidado}; obs={servico.Obs}; ";
+            return $"NomeEvento={servico.NomeEvento};tipoevento={servico.TipoEvento}; dataevento={servico.DataEvento}; numeroconvidado={servico.NumeroConvidado}; observacoes={servico.Obs};";
         }
     }
 }

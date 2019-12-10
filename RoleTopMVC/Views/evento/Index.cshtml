@@ -1,12 +1,15 @@
+@model RoleTopMVC.ViewModels.ServicosViewModel
+
 <main style= "padding-bottom: 10em;">
-                <div class="cavento">Cadastro do evento</div>
+        <h2>Faça seu pedido, Sr.@Model.NomeUsuario!</h2>
+                <div class="evento">Cadastro do evento</div>
 
                 <form method="post" id="fcontato" action='@Url.Action("Registrar", "evento") '>
                    <fieldset>
         
                         <p>
                             <label for="cevento"> Nome do Evento:</label>
-                            <input type="text" name="tevento" id="cevento" placeholder="ex:Senai confraternização">
+                            <input type="text" name="NomeEvento" id="cevento" placeholder="ex:Senai confraternização">
                         </p>
                         
                    
@@ -14,12 +17,16 @@
                             <p>
                                     <label for="ctevento"> Tipo do evento:</label> 
                                     <select type="text" name="tipoevento" id="ctevento">
-                                        <option>Casamento</option>
-                                        <option>Debutante</option>
-                                        <option>Corporativo</option>
-                                        <option>Aniversário</option>
-                                        <option>Bodas</option>
-                                        <option>Outros</option>
+                                     <option value="Casamento">Casamento</option>
+                                        <option value="Aniversário de Debutante">Debutante</option>
+                                        <option value="Festa de empresas">Corporativo</option>
+                                        <option value="Festa de Aniversário">Aniversário</option>
+                                        <option value="Balada">Balada</option>
+                                    </select>
+                                      
+                                
+                       
+                        
                                     </select>
                                         
                                 </p>        
@@ -52,22 +59,16 @@
                                     
                                     <p>
                                         
-                                        <label for= "csom">Aparelho de som? (Valor fixo de R$3.000):</label>
-                                        <select type="text" name="som" id="csom">
-                                            <option>Sim</option>
-                                                <option>Não</option>
-                                                </select>
+                                        <label for= "csom">Serviços adicionais:(Valor fixo de R$3.000):</label>
+                                        <select name="som" id="csom" required> 
+                                            <option value="" disabled selected>Selecione</option>
+                                            @foreach (var s in @Model.servicos )
+                                            {
+                                                <option value=>@s.Nome Por @s.Preco</option>
+                                            }
+                                                                                           </select>
                                     
                                     </p>
-                                    
-                                    <p>
-                                            <label for= "cilu">Aparelho de iluminação? (Valor fixo de R$3.000):</label>
-                                            <select type="text" name="iluminacao" id="cilu">
-                                                <option>Sim</option>
-                                                    <option>Não</option>
-                                                    </select>
-                                    </p>
-                                    
                                    
                    </fieldset>
 

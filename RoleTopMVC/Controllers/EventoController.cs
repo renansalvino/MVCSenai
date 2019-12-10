@@ -7,26 +7,27 @@ using RoleTopMVC.Repositories;
 using RoleTopMVC.ViewModels;
 
 namespace RoleTopMVC.Controllers {
-    public class PedidoController : AbstractController {
+    public class EventoController : AbstractController {
         ServicoRepository servicoRepository = new ServicoRepository ();
         ClienteRepository clienteRepository = new ClienteRepository ();
         PedidoRepository pedidoRepository = new PedidoRepository ();
 
         public IActionResult Index () {
-            ServicosViewModel pedido = new ServicosViewModel ();
-            pedido.pedidos = pedidoRepository.ObterTodos();
+            ServicosViewModel svm = new ServicosViewModel ();
+            svm.pedidos = pedidoRepository.ObterTodos();
+            svm.servicos = servicoRepository.ObterTodos();
 
             var usuarioLogado = ObterUsuarioSession ();
             var nomeUsuarioLogado = ObterUsuarioNomeSession ();
             if (!string.IsNullOrEmpty (nomeUsuarioLogado)) {
-                pedido.NomeUsuario = nomeUsuarioLogado;
+                svm.NomeUsuario = nomeUsuarioLogado;
             }
+            
+            svm.NomeView = "evento";
+            svm.UsuarioEmail = usuarioLogado;
+            svm.UsuarioNome = nomeUsuarioLogado;
 
-            pedido.NomeView = "Cadastro do evento";
-            pedido.UsuarioEmail = usuarioLogado;
-            pedido.UsuarioNome = nomeUsuarioLogado;
-
-            return View ();
+            return View (svm);
 
         }
         public IActionResult Registrar (IFormCollection form) {
@@ -47,13 +48,14 @@ namespace RoleTopMVC.Controllers {
 
             pedido.Servico = Iluminacao;
             Cliente cliente = new Cliente();
-            Pedido pedido1 = new Pedido () {
+            Pedido pedidos = new Pedido () {
 
-                NomeEvento = form["tevento"],
+                NomeEvento = form["NomeEvento"],
                 TipoEvento = form["tipoevento"],
                 DataEvento = DateTime.Parse (form["dataevento"]),
                 NumeroConvidado = int.Parse(form["numeroconvidado"]),
                 Obs = form["observacoes"],
+             
             };
 
             pedido.Cliente  = cliente;

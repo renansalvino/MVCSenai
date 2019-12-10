@@ -3,7 +3,7 @@ using System.IO;
 using RoleTopMVC.Models;
 
 namespace RoleTopMVC.Repositories {
-    public class ClienteRepository : RepositoryBase {
+    public class ClienteRepository : RepositoryBase { // é o cadastro repositorio
 
         private const string PATH = "Database/Cliente.csv";
 
@@ -27,11 +27,11 @@ namespace RoleTopMVC.Repositories {
                 if (ExtrairValorDoCampo ("email", item).Equals (email)) {
                     Cliente cliente = new Cliente ();
                     cliente.Nome = ExtrairValorDoCampo ("nome", item);
-                    cliente.DataNascimento = DateTime.Parse(ExtrairValorDoCampo ("dataNascimento", item));
+                    cliente.DataNascimento = DateTime.Parse(ExtrairValorDoCampo ("date", item));
                     cliente.Telefone = ExtrairValorDoCampo ("number", item);
-                    cliente.CPF = ExtrairValorDoCampo ("cpf", item);
-                    cliente.Email = ExtrairValorDoCampo ("cemail", item);
-                    cliente.Senha = ExtrairValorDoCampo ("cesenha", item);
+                    cliente.CPF = ExtrairValorDoCampo ("CPF", item);
+                    cliente.Email = ExtrairValorDoCampo ("email", item);
+                    cliente.Senha = ExtrairValorDoCampo ("esenha", item);
 
                     return cliente;
                 }
@@ -40,7 +40,7 @@ namespace RoleTopMVC.Repositories {
         }
 
         private string PrepararRegistrocsv (Cliente cliente) {
-            return $"nome={cliente.Nome}; dataNascimento={cliente.DataNascimento}; number={cliente.Telefone}; cpf={cliente.CPF}; cemail={cliente.Email};csenha={cliente.Senha}";
+            return $"nome={cliente.Nome};date={cliente.DataNascimento};number={cliente.Telefone};CPF={cliente.CPF};email={cliente.Email};senha={cliente.Senha}";
         }
     }
 }

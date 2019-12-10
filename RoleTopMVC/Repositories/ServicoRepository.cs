@@ -1,11 +1,9 @@
-using System.Collections.Generic;
-using RoleTopMVC.Models;
-using RoleTopMVC.Controllers;
-using RoleTopMVC.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.IO;
-
-
+using RoleTopMVC.Controllers;
+using RoleTopMVC.Models;
+using RoleTopMVC.ViewModels;
 
 namespace RoleTopMVC.Repositories {
     public class ServicoRepository : RepositoryBase {
@@ -23,21 +21,21 @@ namespace RoleTopMVC.Repositories {
             return preco;
         }
 
-        public List<Produto> ObterTodos(){
+        public List<Produto> ObterTodos () {
 
-            List<Produto> servicos = new List<Produto>(); 
+            List<Produto> servicos = new List<Produto> ();
 
-        string[] linhas = File.ReadAllLines (CAMINHO);
-        foreach (var linha in linhas) {
-            Produto servico = new Produto();
-          
-            string[] dados = linha.Split (";");
-            servico.Nome = dados[0];
-            servico.Preco = double.Parse(dados[1]);
-            servicos.Add(servico);
-        }
+            string[] linhas = File.ReadAllLines (CAMINHO);
+            foreach (var linha in linhas) {
+                Produto servico = new Produto ();
 
-        return servicos;
+                string[] dados = linha.Split (";");
+                servico.Nome = dados[0];
+                servico.Preco = double.Parse (dados[1]);
+                servicos.Add (servico);
+            }
+
+            return servicos;
 
         }
 

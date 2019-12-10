@@ -6,6 +6,8 @@ namespace RoleTopMVC.ViewModels
     public class ServicosViewModel : BaseViewModel
     {
         public List<Pedido> pedidos { get; set; }
+        public List<Produto> servicos {get;set;}
+
         public ServicosViewModel(string nomeUsuario, Cliente cliente)
         {
             this.NomeUsuario = nomeUsuario;
@@ -19,6 +21,7 @@ namespace RoleTopMVC.ViewModels
         {
             this.Cliente = new Cliente();
             this.pedidos = new List<Pedido>();
+            this.servicos = new List<Produto>();
             this.NomeUsuario = "Senhor";
         }
     }
