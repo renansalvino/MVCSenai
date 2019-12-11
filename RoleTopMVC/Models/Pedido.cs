@@ -6,10 +6,8 @@ using RoleTopMVC.Enums;
 
 namespace RoleTopMVC.Models {
     public class Pedido {
-
+        
         public string Nome {get;set;}
-        public int Telefone {get;set;}
-        public double Preco {get;set;}
         public ulong Id { get; set; }
         public Cliente Cliente { get; set; }
         public string NomeEvento { get; set; }
@@ -22,9 +20,9 @@ namespace RoleTopMVC.Models {
         public double PrecoTotal { get; set; }
         public StringValues Servico { get; internal set; }
 
-        public Pedido (ulong id, Cliente cliente, string nomeEvento, string tipoEvento, DateTime dataEvento, int numeroConvidado, string obs, Produto Iluminação, Produto som, uint status, double precoTotal,int telefone) {
-            this.Id = 0;
-            this.Cliente = cliente;
+        public Pedido ( Cliente cliente, string nomeEvento, string tipoEvento, DateTime dataEvento, int numeroConvidado, string obs,uint status, double precoTotal,int telefone,Produto Servico) {
+  
+           
             this.NomeEvento = nomeEvento;
             this.TipoEvento = tipoEvento;
             this.DataEvento = dataEvento;
@@ -32,11 +30,11 @@ namespace RoleTopMVC.Models {
             this.Obs = obs;
             this.Status = (uint) StatusPedido.PENDENTE;
             this.PrecoTotal = precoTotal;
-            this.Telefone = telefone;
-
+            this.Servicos = Servico;
+            this.Id = 0;
         }
         public Pedido () {
-
+            
         }
     }
 }

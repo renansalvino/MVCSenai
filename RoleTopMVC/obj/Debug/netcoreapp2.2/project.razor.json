@@ -3026,11 +3026,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\36591349880\\Desktop\\MVC\\RoleTopMVC\\Views\\Histórico\\Historico.cshtml",
-      "TargetPath": "Views\\Histórico\\Historico.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\36591349880\\Desktop\\MVC\\RoleTopMVC\\Views\\Shared\\Sucesso.cshtml",
       "TargetPath": "Views\\Shared\\Sucesso.cshtml",
       "FileKind": "mvc"

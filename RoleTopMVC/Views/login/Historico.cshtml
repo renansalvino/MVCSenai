@@ -1,4 +1,8 @@
 @model RoleTopMVC.ViewModels.HistoricoViewModels
+@{
+    ViewData["Title"] = "Eventos-RoleTop";
+    ViewData["H2"] = "Histórico de eventos";
+}
 <main>
 
     <div id="dash"> 
@@ -21,7 +25,7 @@
     {
         <tr>
             <td>@pedido.Nome</td>
-            <td>@pedido.Telefone</td>
+            <td>@pedido.Cliente.Telefone</td>
             <td>@pedido.TipoEvento</td>
             <td>@pedido.Servicos</td>
             <td>@pedido.Obs</td>

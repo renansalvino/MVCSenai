@@ -24,15 +24,15 @@ namespace RoleTopMVC.Repositories {
         public Cliente ObterPor (string email) {
             var linhas = File.ReadAllLines (PATH);
             foreach (var item in linhas) {
-                if (ExtrairValorDoCampo ("email", item).Equals (email)) {
+                if (ExtrairValorDoCampo("email", item).Equals (email)) {
                     Cliente cliente = new Cliente ();
                     cliente.Nome = ExtrairValorDoCampo ("nome", item);
                     cliente.DataNascimento = DateTime.Parse(ExtrairValorDoCampo ("date", item));
                     cliente.Telefone = ExtrairValorDoCampo ("number", item);
                     cliente.CPF = ExtrairValorDoCampo ("CPF", item);
                     cliente.Email = ExtrairValorDoCampo ("email", item);
-                    cliente.Senha = ExtrairValorDoCampo ("esenha", item);
-
+                    cliente.Senha = ExtrairValorDoCampo ("senha", item);
+                    cliente.TipoUsuario = uint.Parse (ExtrairValorDoCampo ("tipo_usuario", item));
                     return cliente;
                 }
             }
@@ -40,7 +40,7 @@ namespace RoleTopMVC.Repositories {
         }
 
         private string PrepararRegistrocsv (Cliente cliente) {
-            return $"nome={cliente.Nome};date={cliente.DataNascimento};number={cliente.Telefone};CPF={cliente.CPF};email={cliente.Email};senha={cliente.Senha}";
+            return $"tipo_usuario={cliente.TipoUsuario};nome={cliente.Nome};date={cliente.DataNascimento};number={cliente.Telefone};CPF={cliente.CPF};email={cliente.Email};senha={cliente.Senha}";
         }
     }
 }

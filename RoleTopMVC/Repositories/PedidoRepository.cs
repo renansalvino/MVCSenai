@@ -41,14 +41,19 @@ namespace RoleTopMVC.Repositories {
             List<Pedido> servicos = new List<Pedido> ();
 
             foreach (var linha in linhas) {
-                Pedido servico = new Pedido ();
-
-                servico.NomeEvento = ExtrairValorDoCampo ("NomeEvento", linha);
-                servico.TipoEvento = ExtrairValorDoCampo ("tipoevento", linha);
-                servico.DataEvento = DateTime.Parse (ExtrairValorDoCampo ("dataevento", linha));
-                servico.NumeroConvidado = int.Parse (ExtrairValorDoCampo ("numeroconvidado", linha));
-                servico.Obs = ExtrairValorDoCampo ("observacoes", linha);
-                servicos.Add (servico);
+                Pedido pedido = new Pedido ();
+                pedido.Cliente.Nome = ExtrairValorDoCampo ("nome", linha);
+                pedido.Cliente.Telefone = ExtrairValorDoCampo ("number", linha);
+                pedido.Cliente.Email = ExtrairValorDoCampo ("email", linha);
+                pedido.NomeEvento = ExtrairValorDoCampo ("NomeEvento", linha);
+                pedido.TipoEvento = ExtrairValorDoCampo ("tipoevento", linha);
+                pedido.DataEvento = DateTime.Parse (ExtrairValorDoCampo ("dataevento", linha));
+                pedido.NumeroConvidado = int.Parse (ExtrairValorDoCampo ("numeroconvidado", linha));
+                pedido.Obs = ExtrairValorDoCampo ("observacoes", linha);
+                pedido.Cliente.Telefone = ExtrairValorDoCampo ("number", linha);
+                pedido.Status = uint.Parse (ExtrairValorDoCampo ("status_pedido", linha));
+                pedido.Id = ulong.Parse (ExtrairValorDoCampo ("id", linha));
+                servicos.Add (pedido);
             }
             return servicos;
         }
@@ -86,7 +91,8 @@ namespace RoleTopMVC.Repositories {
         }
         public string PrepararServicoCSV (Pedido servico) {
             Pedido pedido = servico;
-            return $"NomeEvento={servico.NomeEvento};tipoevento={servico.TipoEvento}; dataevento={servico.DataEvento}; numeroconvidado={servico.NumeroConvidado}; observacoes={servico.Obs};";
+            Cliente cliente = servico.Cliente;
+            return $"nome={cliente.Nome};number={cliente.Telefone};email={cliente.Email};id={pedido.Id};status_pedido={pedido.Status};NomeEvento={servico.NomeEvento};tipoevento={servico.TipoEvento};dataevento={servico.DataEvento};numeroconvidado={servico.NumeroConvidado};observacoes={servico.Obs};";
         }
     }
 }

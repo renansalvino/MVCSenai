@@ -33,7 +33,7 @@ namespace RoleTopMVC.Controllers {
                 var usuario = form["temail"];
                 var senha = form["tsenha"];
 
-                var cliente = clienteRepository.ObterPor (usuario);
+                var cliente = clienteRepository.ObterPor(usuario);
 
                 if (cliente != null) {
                     if (cliente.Senha.Equals (senha)) {
@@ -73,13 +73,13 @@ namespace RoleTopMVC.Controllers {
 
             } catch (Exception e) {
                 System.Console.WriteLine (e.StackTrace);
-                return View ("Erro");
+                return View ("Erro", new RespostaViewModel());
 
             }
         }
 
         public IActionResult Historico () {
-            var emailCliente = ObterUsuarioSession ();
+            var emailCliente = HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);
             var servicosCliente = pedidoRepository.ObterTodosPorCliente (emailCliente);
 
             return View (new HistoricoViewModels () {

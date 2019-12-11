@@ -152,7 +152,6 @@ C:\Users\Renan\Desktop\MVC 4\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.Assem
 C:\Users\Renan\Desktop\MVC 4\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.AssemblyInfo.cs
 C:\Users\Renan\Desktop\MVC 4\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.dll
 C:\Users\Renan\Desktop\MVC 4\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.pdb
-C:\Users\36591349880\Desktop\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Histórico\Historico.g.cshtml.cs
 C:\Users\36591349880\Desktop\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\login\Historico.g.cshtml.cs
 c:\Users\Renan\Desktop\MVC\MVCSenai\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.csprojAssemblyReference.cache
 c:\Users\Renan\Desktop\MVC\MVCSenai\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.csproj.CoreCompileInputs.cache

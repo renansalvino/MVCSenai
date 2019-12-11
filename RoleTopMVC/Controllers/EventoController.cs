@@ -11,7 +11,7 @@ namespace RoleTopMVC.Controllers {
         ServicoRepository servicoRepository = new ServicoRepository ();
         ClienteRepository clienteRepository = new ClienteRepository ();
         PedidoRepository pedidoRepository = new PedidoRepository ();
-
+        Cliente cliente = new Cliente();
         public IActionResult Index () {
             ServicosViewModel svm = new ServicosViewModel ();
             svm.pedidos = pedidoRepository.ObterTodos();
@@ -45,17 +45,16 @@ namespace RoleTopMVC.Controllers {
             Produto Iluminação = new Produto ();
             Iluminação.Nome = Iluminacao;
             Iluminação.Preco = servicoRepository.ObterPrecoDe(Iluminacao);
-
+        var emailCliente = ObterUsuarioSession();
             pedido.Servico = Iluminacao;
-            Cliente cliente = new Cliente();
+            Cliente cliente = clienteRepository.ObterPor(emailCliente);
             Pedido pedidos = new Pedido () {
-
+                
                 NomeEvento = form["NomeEvento"],
                 TipoEvento = form["tipoevento"],
                 DataEvento = DateTime.Parse (form["dataevento"]),
                 NumeroConvidado = int.Parse(form["numeroconvidado"]),
                 Obs = form["observacoes"],
-             
             };
 
             pedido.Cliente  = cliente;
