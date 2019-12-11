@@ -11,22 +11,24 @@
             <th>Nome Completo</th>
             <th>Telefone</th>
             <th>Tipos de Pedidos</th>
-            <th>Serviços de Iluminação</th>
-            <th>Serviços de Som</th>
+            <th>Serviços adcionais</th>
             <th>Observações do pedido</th>
             <th>Valor Total</th>
             <th>Aprovar</th>
             
         </tr>
+    @foreach (var pedido in Model.pedidos)
+    {
         <tr>
-            <td>Cesar Sportore</td>
-            <td>4002-8922</td>
-            <td>Bodas</td>
-            <td>Sim</td>
-            <td>Não</td>
-            <td>Quero que o local esteja limpo</td>
-            <td>13.000</td>
-            <td>
+            <td>@pedido.Nome</td>
+            <td>@pedido.Telefone</td>
+            <td>@pedido.TipoEvento</td>
+            <td>@pedido.Servicos</td>
+            <td>@pedido.Obs</td>
+            <td>@pedido.PrecoTotal</td>
+        </tr>
+    }
+       
                 
                 <div id="imagex"><img src="img/fotox.png"></div>
                 
@@ -36,17 +38,6 @@
     </table>
 </div>
 
-    @foreach (var pedido in Model.pedidos)
-    {
-        <tr>
-            <td>@pedido.Nome</td>
-            <td>@pedido.</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    }
     </div>
 </section>
 </main>
