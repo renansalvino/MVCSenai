@@ -25,15 +25,15 @@ namespace RoleTopMVC.Repositories {
             var linhas = File.ReadAllLines (PATH);
             foreach (var item in linhas) {
                 if (ExtrairValorDoCampo("email", item).Equals(email)) {
-                    Cliente cliente = new Cliente ();
-                    cliente.Nome = ExtrairValorDoCampo ("nome", item);
-                    cliente.DataNascimento = DateTime.Parse(ExtrairValorDoCampo ("date", item));
-                    cliente.Telefone = ExtrairValorDoCampo ("number", item);
-                    cliente.CPF = ExtrairValorDoCampo ("CPF", item);
-                    cliente.Email = ExtrairValorDoCampo ("email", item);
-                    cliente.Senha = ExtrairValorDoCampo ("senha", item);
-                    cliente.TipoUsuario = uint.Parse (ExtrairValorDoCampo ("tipo_usuario", item));
-                    return cliente;
+                    Cliente c = new Cliente ();
+                    c.Nome = ExtrairValorDoCampo ("nome", item);
+                    c.DataNascimento = DateTime.Parse(ExtrairValorDoCampo ("date", item));
+                    c.Telefone = ExtrairValorDoCampo ("number", item);
+                    c.CPF = ExtrairValorDoCampo ("CPF", item);
+                    c.Email = ExtrairValorDoCampo ("email", item);
+                    c.Senha = ExtrairValorDoCampo ("senha", item);
+                    c.TipoUsuario = uint.Parse (ExtrairValorDoCampo ("tipo_usuario", item));
+                    return c;
                 }
             }
             return null;

@@ -5,7 +5,7 @@ using RoleTopMVC.Models;
 
 namespace RoleTopMVC.Repositories {
     public class PedidoRepository : RepositoryBase {
-
+        ServicoRepository servicoRepository = new ServicoRepository();
         private const string CAMINHO = "Database/Pedido.csv";
         public PedidoRepository () {
             if (!File.Exists (CAMINHO)) {
@@ -13,10 +13,10 @@ namespace RoleTopMVC.Repositories {
             }
 
         }
-        public bool Inserir (Pedido servico) {
+        public bool Inserir (Pedido p) {
             var quantidadedeServicos = File.ReadAllLines (CAMINHO).Length;
-            servico.Id = (ulong) ++quantidadedeServicos;
-            var linha = new string[] { PrepararServicoCSV (servico) };
+            p.Id = (ulong) ++quantidadedeServicos;
+            var linha = new string[] { PrepararServicoCSV (p) };
             File.AppendAllLines (CAMINHO, linha);
 
             return true;
@@ -48,12 +48,20 @@ namespace RoleTopMVC.Repositories {
                 pedido.NomeEvento = ExtrairValorDoCampo ("NomeEvento", linha);
                 pedido.TipoEvento = ExtrairValorDoCampo ("tipoevento", linha);
                 pedido.DataEvento = DateTime.Parse (ExtrairValorDoCampo ("dataevento", linha));
+                pedido.ListaDeProdutos = ExtrairValorDoCampo ("pacotes", linha);
                 pedido.NumeroConvidado = int.Parse (ExtrairValorDoCampo ("numeroconvidado", linha));
                 pedido.Obs = ExtrairValorDoCampo ("observacoes", linha);
                 pedido.Cliente.Telefone = ExtrairValorDoCampo ("number", linha);
                 pedido.Status = uint.Parse (ExtrairValorDoCampo ("status_pedido", linha));
                 pedido.Id = ulong.Parse (ExtrairValorDoCampo ("id", linha));
                 servicos.Add (pedido);
+
+                string[] pacotes = pedido.ListaDeProdutos.Split(",");
+
+                foreach(string pacote in pacotes)
+                {
+                    pedido.Produtos.Add(new Produto(pacote, servicoRepository.ObterPrecoDe(pacote)));
+                }
             }
             return servicos;
         }
@@ -89,10 +97,16 @@ namespace RoleTopMVC.Repositories {
 
             return resultado;
         }
-        public string PrepararServicoCSV (Pedido servico) {
-            Pedido pedido = servico;
-            Cliente cliente = servico.Cliente;
-            return $"nome={cliente.Nome};number={cliente.Telefone};email={cliente.Email};id={pedido.Id};status_pedido={pedido.Status};NomeEvento={servico.NomeEvento};tipoevento={servico.TipoEvento};dataevento={servico.DataEvento};numeroconvidado={servico.NumeroConvidado};observacoes={servico.Obs};";
+        public string PrepararServicoCSV (Pedido p) {
+            Pedido pedido = p;
+            Cliente cliente = pedido.Cliente;
+            List<string> ListaProdutos = new List<string>();
+            foreach (var produto in p.Produtos)
+            {
+             ListaProdutos.Add(produto.Nome);
+            }
+            var produtos = string.Join(",", ListaProdutos.ToArray());
+            return $"nome={cliente.Nome};number={cliente.Telefone};email={cliente.Email};id={pedido.Id};status_pedido={pedido.Status};NomeEvento={p.NomeEvento};tipoevento={p.TipoEvento};dataevento={p.DataEvento};numeroconvidado={p.NumeroConvidado};observacoes={p.Obs};pacotes={produtos};";
         }
     }
 }

@@ -45,12 +45,12 @@ namespace RoleTopMVC.Controllers {
 
                             return RedirectToAction ("Index", "Evento");
                             
-                            default:
+                            default :
                                 HttpContext.Session.SetString (SESSION_CLIENTE_EMAIL, usuario);
                                 HttpContext.Session.SetString (SESSION_CLIENTE_NOME, cliente.Nome);
                                 HttpContext.Session.SetString (SESSION_CLIENTE_TIPO, cliente.TipoUsuario.ToString ());
 
-                            return RedirectToAction ("admin", "Administrador");
+                            return RedirectToAction ("Administrador", "Administrador");
                         }
                     } else {
                         return View ("Erro", new RespostaViewModel ("Senha incorreta") {
@@ -89,7 +89,7 @@ namespace RoleTopMVC.Controllers {
             });
         }
 
-        IActionResult Logoff () {
+         public IActionResult Logoff () {
             HttpContext.Session.Remove (SESSION_CLIENTE_EMAIL);
             HttpContext.Session.Remove (SESSION_CLIENTE_NOME);
             HttpContext.Session.Clear ();
