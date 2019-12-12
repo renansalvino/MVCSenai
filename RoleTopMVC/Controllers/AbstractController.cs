@@ -5,7 +5,6 @@ namespace RoleTopMVC.Controllers {
     public class AbstractController : Controller {
         protected const string SESSION_CLIENTE_EMAIL = "Cliente_Email";
         protected const string SESSION_CLIENTE_NOME = "Cliente_Nome";
-
         protected const string SESSION_CLIENTE_TIPO = "cliente_tipo";
 
         protected string ObterUsuarioSession () {

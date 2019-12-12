@@ -3,6 +3,7 @@ using System;
 namespace RoleTopMVC.Models {
 
     public class Cliente {
+        public uint Id {get;set;}
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string Endereco { get; set; }

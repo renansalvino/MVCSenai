@@ -24,7 +24,7 @@ namespace RoleTopMVC.Repositories {
         public Cliente ObterPor (string email) {
             var linhas = File.ReadAllLines (PATH);
             foreach (var item in linhas) {
-                if (ExtrairValorDoCampo("email", item).Equals (email)) {
+                if (ExtrairValorDoCampo("email", item).Equals(email)) {
                     Cliente cliente = new Cliente ();
                     cliente.Nome = ExtrairValorDoCampo ("nome", item);
                     cliente.DataNascimento = DateTime.Parse(ExtrairValorDoCampo ("date", item));

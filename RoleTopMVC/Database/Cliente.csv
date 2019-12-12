@@ -1,1 +1,2 @@
-tipo_usuario=1;nome=Renan Salvino;date=25/05/2020 00:00:00;number=1234567898;CPF=36591349880;email=renan@gmail.com;senha=12345678
+tipo_usuario=0;nome=Renan Salvino;date=25/05/2020 00:00:00;number=1234567898;CPF=36591349880;email=renan@gmail.com;senha=12345678
+tipo_usuario=1;nome=Jubileu;date=25/05/2002 00:00:00;number=40028922;CPF=987654321;email=jubileu@gmail.com;senha=40028922

@@ -33,25 +33,24 @@ namespace RoleTopMVC.Controllers {
                 var usuario = form["temail"];
                 var senha = form["tsenha"];
 
-                var cliente = clienteRepository.ObterPor(usuario);
+                var cliente = clienteRepository.ObterPor (usuario);
 
                 if (cliente != null) {
                     if (cliente.Senha.Equals (senha)) {
                         switch (cliente.TipoUsuario) {
-                            case (uint) TiposUsuario.CLIENTE:
+                            case 1:
                                 HttpContext.Session.SetString (SESSION_CLIENTE_EMAIL, usuario);
                                 HttpContext.Session.SetString (SESSION_CLIENTE_NOME, cliente.Nome);
                                 HttpContext.Session.SetString (SESSION_CLIENTE_TIPO, cliente.TipoUsuario.ToString ());
 
-                                return RedirectToAction ("Historico", "login");
-
+                            return RedirectToAction ("Index", "Evento");
+                            
                             default:
                                 HttpContext.Session.SetString (SESSION_CLIENTE_EMAIL, usuario);
                                 HttpContext.Session.SetString (SESSION_CLIENTE_NOME, cliente.Nome);
                                 HttpContext.Session.SetString (SESSION_CLIENTE_TIPO, cliente.TipoUsuario.ToString ());
 
-                                return RedirectToAction ("Dashboard", "Administrador");
-
+                            return RedirectToAction ("admin", "Administrador");
                         }
                     } else {
                         return View ("Erro", new RespostaViewModel ("Senha incorreta") {
@@ -73,13 +72,13 @@ namespace RoleTopMVC.Controllers {
 
             } catch (Exception e) {
                 System.Console.WriteLine (e.StackTrace);
-                return View ("Erro", new RespostaViewModel());
+                return View ("Erro", new RespostaViewModel ());
 
             }
         }
 
         public IActionResult Historico () {
-            var emailCliente = HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);
+            var emailCliente = HttpContext.Session.GetString (SESSION_CLIENTE_EMAIL);
             var servicosCliente = pedidoRepository.ObterTodosPorCliente (emailCliente);
 
             return View (new HistoricoViewModels () {
