@@ -22,6 +22,9 @@ NAV ul{
     background-color: #ffc600;
     text-decoration-color: white;
 }
+nav ul li{
+    background-color: #ffc600;
+}
 nav{
     
     text-align: center;

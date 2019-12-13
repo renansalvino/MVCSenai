@@ -1,127 +1,94 @@
-body {
-  margin: 0%;
-  padding: 0%;
+main {
+  width: 80%;
 }
 
-
-table, th, td {
-    border: 1px solid black;
-  }
-#dash td img{
- padding: 7px;
-  width: 20px;
-  height: 20px;
+#painel {
+  display: flex;
+  justify-content: space-between;
 }
 
-#dash td {
-  height: 50px;
-  letter-spacing: bottom;
+h2 {
+  font-size: 1.8em;
 }
 
-body {
-  background-color: #7d0093;
+h3 {
+  padding: 0.5em 0;
+  font-size: 1.3em;
+  color: #361a0c;
+  text-shadow: 
+  -1px -1px 0 #fff,
+  1px -1px 0 #fff,
+ -1px  1px 0 #fff,
+  1px  1px 0 #fff;
 }
 
-
-nav div ul li > img{
-  width: 60%;
-  padding: 0.2em;
+h4 {
+  font-size: 2em;
+  font-family: 'Fredoka One', cursive;
 }
-nav div ul > li{
-  width: 100%;
+
+.box-status-pedidos {
+  width: 30%;
+  padding-top: .5em;
   text-align: center;
 }
-NAV ul{
-  margin: 0%;
-  padding: 0%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  font-size: 1.5em;
-  font-family: 'Limelight', cursive;
-  align-items: flex-end;
-  justify-content: space-between;
-  list-style-type: none;
-  background-color: #ffc600;
-}
-
-nav img {
-  margin: auto;
-  width: 428px;
-  height: 313px;
-}
-
-nav img {
-  display: flex;
-  justify-content: center;
-}
-
-#fundao {
-  background-color: #7d0093;
-  background-image: url(img/login.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-
-address {
-    font-size: 1.5em;
-}
-
-address a {
-    text-align: center;
-}
-
-footer > div {
-  background-color: #ffc600
-}
-
-footer > div {
-  font-size: 0,5em;
-  justify-content: flex-end;
-}
-footer img {
-  width: 0,5px;
-  height: 0,5px;
-}
-
-footer {
-  background-color: #7d0093
-}
-
-footer a {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 2em; 
-}
-#daletra {
-  display: flex;
-  justify-content: flex-end;
+.box-status-pedidos > p {
   font-size: 2em;
-
+  padding: 0.5em 0 0 0;
 }
 
-#inscreve a {
-    font-family: 'Century Gothic', sans-serif;
-
+.box-status-pedidos.reprovados {
+  background-color: #a70000;
 }
 
-#inscreve a img {
-  width: 2%;
-  height: 2%;
+.box-status-pedidos.aprovados {
+  background-color: #669100;
 }
 
-.pedidos {
-  color: white;
-  font-size: 2em;
+.box-status-pedidos.pendentes {
+  background-color: #ff9933;
 }
 
-body{
-  font-family: 'Century Gothic', sans-serif;
-}
-
-.bt-common-menu a{
+table {
+  text-align: center;
   color: #fff;
+  border: 1px dashed #ff9933;
+  width: 100%;
+  padding: 5px;
+  word-break: normal;
+}
+
+table th {
+  background-color:#a70000;
+}
+
+table a {
   text-decoration: none;
+  color: #ff9933;
+}
+
+table a:hover {
+  text-decoration: underline;
+}
+
+tfoot td {
+  text-align: center;
+  color: #ff9933;
+  background-color: #a70000;
+}
+
+thead > tr:first-child > th:last-child {
+  padding: 0 .5em;
+}
+
+@media (max-width: 625px) {
+  main {
+      width: 90%;
+  }
+
+  h4 {
+      font-size: 1em;
+  }
+
+
 }
