@@ -162,7 +162,6 @@ c:\Users\Renan\Desktop\MVC\MVCSenai\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMV
 c:\Users\Renan\Desktop\MVC\MVCSenai\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.dll
 c:\Users\Renan\Desktop\MVC\MVCSenai\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.pdb
 C:\Users\Renan\Desktop\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\login\Historico.g.cshtml.cs
-C:\Users\Renan\Desktop\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Administrador\admin.g.cshtml.cs
 C:\Users\36591349880\Desktop\MVC\MVCSenai\RoleTopMVC\bin\Debug\netcoreapp2.2\RoleTopMVC.deps.json
 C:\Users\36591349880\Desktop\MVC\MVCSenai\RoleTopMVC\bin\Debug\netcoreapp2.2\RoleTopMVC.runtimeconfig.json
 C:\Users\36591349880\Desktop\MVC\MVCSenai\RoleTopMVC\bin\Debug\netcoreapp2.2\RoleTopMVC.runtimeconfig.dev.json
@@ -202,3 +201,4 @@ C:\Users\36591349880\Desktop\MVC\MVCSenai\RoleTopMVC\obj\Debug\netcoreapp2.2\Rol
 C:\Users\36591349880\Desktop\MVC\MVCSenai\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.pdb
 C:\Users\36591349880\Desktop\MVC\MVCSenai\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.csproj.CopyComplete
 c:\Users\36591349880\Desktop\MVC\MVCSenai\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Administrador\Administrador.g.cshtml.cs
+C:\Users\Renan\Desktop\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Administrador\Administrador.g.cshtml.cs

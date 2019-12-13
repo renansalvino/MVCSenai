@@ -5,7 +5,7 @@ namespace RoleTopMVC.ViewModels
 {
     public class DashboardViewModel : BaseViewModel
     {
-        public List<Pedido> Servicos {get;set;} 
+        public List<Pedido> Pedidos {get;set;} 
 
         public uint ServicosAprovados {get;set;}
         public uint ServicosReprovados {get;set;}
@@ -13,7 +13,8 @@ namespace RoleTopMVC.ViewModels
 
         public DashboardViewModel()
         {
-            this.Servicos = new List <Pedido>();
-        }
-    }
+            this.Pedidos = new List <Pedido>();
+        }    
+      
+}
 }

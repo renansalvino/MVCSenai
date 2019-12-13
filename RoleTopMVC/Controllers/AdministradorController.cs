@@ -31,7 +31,7 @@ namespace RoleTopMVC.Controllers
                             break;
                         default:
                             dashboardViewModel.ServicosPendentes++;
-                            dashboardViewModel.Servicos.Add (pedido);
+                            dashboardViewModel.Pedidos.Add (pedido);
                             break;
                     }
                 }
