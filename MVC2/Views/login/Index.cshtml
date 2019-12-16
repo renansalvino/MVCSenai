@@ -1,0 +1,35 @@
+@model RoleTopMVC.ViewModels.HistoricoViewModels
+@{
+ViewData ["Title"] = "Servicos - Role Top";
+ViewData["H2"] = "Histórico de Serviços";
+}
+
+<main style="padding-bottom: 20em">
+    <nav>
+        <h2>Cadastro do cliente</h2>
+    </nav>
+
+    <form method="POST" id="fcontato" action='@Url.Action("Login","Login")'>
+
+        <!-- POST tem que ser em maiscúlo -->
+        <fieldset>
+
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" name="temail" id="cemail" placeholder="Exemplo:roletop@email.com">
+            </p>
+            <p>
+                <label for="senha"> Senha:</label>
+                <input type="password" name="tsenha" id="csenha" size="8" maxlength="8">
+            </p>
+            <a link href="resultado.html">Já tem um evento marcado? clique aqui para vê-lo</a>
+        </fieldset>
+        <input class='center' type="submit" value="Entrar!" />
+    </form>
+    </div>
+
+
+
+
+
+</main>

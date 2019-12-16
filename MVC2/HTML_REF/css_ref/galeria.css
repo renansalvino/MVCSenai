@@ -1,0 +1,211 @@
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background-color: #7d0093
+}
+nav div ul li > img{
+    width: 60%;
+    padding: 0.2em;
+}
+nav div ul > li{
+    width: 100%;
+    text-align: center;
+}
+NAV ul{
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 1.5em;
+    font-family: 'Limelight', cursive;
+    align-items: flex-end;
+    justify-content: space-between;
+    list-style-type: none;
+    background-color: #ffc600;
+    text-decoration-color: white;
+}
+
+nav img {
+    margin: auto;
+    width: 428px;
+    height: 313px;
+}
+
+nav img {
+    display: flex;
+    justify-content: center
+}
+
+/* final da nav */
+
+#nomegaleria {
+    background-color: #ffc600;
+    font-size: 2.5em;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+  
+.galery-container1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  } 
+
+.galery-container{
+    margin: 2;
+    display: flex;
+      justify-content: space-evenly;
+}
+.galery-container{
+    margin: em;
+    padding: 5em;
+}
+
+.galery-container{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.galery-container > a {
+    margin-left: 5%;
+}
+
+  .flex-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flex-group.galery-section {
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+    /* ajustar a galeria/fim */
+
+/* .section-container div img( faz alguma coisa com as fotos da galeria )*/
+#inscreve a img {
+    width: 1.5%;
+     height: 1.5%;
+
+}
+
+footer > div {
+    background-color: #ffc600;
+}
+
+footer > div {
+    font-size: 0,5em;
+    justify-content: flex-end;
+}
+footer img {
+    width: 0,3px;
+     height: 0,3px;
+}
+
+footer a {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5em; 
+    }
+
+    #daletra {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1.5em; 
+
+        }
+
+address {
+    font-size: 1.5em;
+}
+
+address a {
+    text-align: center;
+}
+
+#plantatotal {
+    display: flex;
+    flex-flow: column;
+    width: 10%;
+    float: left;
+}
+
+.parte1{
+    margin: 0px auto;
+    display: table;
+    width: 100%;
+}
+
+.alinha2{
+    display: inline-block;
+    margin-left: 400px;
+}
+
+.plantasituacao{
+    float: right;
+    margin-right: 450px;
+}
+
+.plantahumanizada{
+    float: left;
+    margin-left: 450px;
+}
+
+
+.alinha{
+    display: inline-block;
+    margin-left: 170px;
+}
+
+
+
+#parte2{
+    margin: 0px auto;
+    display: table;
+    width: 100%;
+}
+
+
+
+body{
+    font-family: 'Century Gothic', sans-serif;
+}
+
+.bt-common-menu a{
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 625px) {
+    nav #bt-mobile-menu {
+        display: block;
+    }
+    nav .bt-common-menu {
+        display: none;
+    }
+    nav .bt-common-menu.active {
+        display: block;
+    }
+    nav ul.mobile-mode {
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+@media (max-width: 485px) {
+    .galery-container img {
+        width: 200px;;
+    }
+
+    @media (max-width: 485px) {
+        . img {
+            width: 200px;;
+        }
+
+

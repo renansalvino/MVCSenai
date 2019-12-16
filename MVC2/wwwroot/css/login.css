@@ -1,0 +1,147 @@
+body {
+    margin: 0%;
+    padding: 0%;
+}
+footer{
+    padding-block-end: 50%;
+}
+body {
+    background-color:  #7d0093;
+}
+
+nav div ul li > img{
+    width: 60%;
+    padding: 0.2em;
+}
+nav div ul > li{
+    width: 100%;
+    text-align: center;
+}
+NAV ul{
+    margin: 0%;
+    padding: 0%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 1.5em;
+    font-family: 'Limelight', cursive;
+    align-items: flex-end;
+    justify-content: space-between;
+    list-style-type: none;
+    background-color: #ffc600;
+}
+
+nav img {
+    margin: auto;
+    width: 428px;
+    height: 313px;
+}
+
+nav img {
+    display: flex;
+    justify-content: center;
+
+}
+
+#inscreve a img {
+    width: 1.5%;
+     height: 1.5%;
+
+}
+
+footer > div {
+    background-color: #ffc600;
+}
+
+footer > div {
+    font-size: 0,5em;
+    justify-content: flex-end;
+}
+footer img {
+    width: 0,3px;
+     height: 0,3px;
+}
+
+footer a {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5em; 
+    }
+
+    #daletra {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1.5em; 
+
+        }
+footer {
+    align-items: flex-end
+}
+
+
+address {
+    font-size: 1.5em;
+}
+
+address a {
+    text-align: center;
+}
+
+label  {
+    width: 40em;
+}
+
+input {
+    width: 40em;
+
+}
+
+
+
+input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+fieldset {
+    display: flex;
+    justify-content: center;
+  
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+nav h2 {
+    text-align: center;
+}
+
+#fundao {
+    background-color: #7d0093;
+    background-image: url(img/login.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+main {
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    font-family: 'Century Gothic', sans-serif;
+}
+
+.bt-common-menu a{
+    color: #fff;
+    text-decoration: none;
+}
+
+footer > local > div{
+    padding-top: 0em;
+}
