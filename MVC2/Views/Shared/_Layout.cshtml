@@ -1,0 +1,151 @@
+﻿@model RoleTopMVC.ViewModels.BaseViewModel
+
+
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rolê Top</title>
+
+    <script src="https://kit.fontawesome.com/349a64cb04.js"></script>
+
+    @if("Home".Equals(@Model.NomeView)){
+    <link rel="stylesheet" href="~/css/rolêtop.css">;
+
+    }
+
+    else if("galeria".Equals(@Model.NomeView)){
+    <link rel="stylesheet" href="~/css/galeria.css">;
+    }
+
+    else if("cadastro".Equals(@Model.NomeView)){
+    <link rel="stylesheet" href="~/css/cadastro.css">;
+    }
+
+    else if("login".Equals(@Model.NomeView)){
+    <link rel="stylesheet" href="~/css/login.css">;
+    }
+
+    else if("evento".Equals(@Model.NomeView)){
+    <link rel="stylesheet" href="~/css/evento.css">;
+    }
+
+    else if("programação".Equals(@Model.NomeView)){
+    <link rel="stylesheet" href="~/css/programação.css">;
+    }
+
+    else if("resultado".Equals(@Model.NomeView)){
+    <link rel="stylesheet" href="~/css/resultado.css">;
+    }
+      else if("Historico".Equals(@Model.NomeView)){
+    <link rel="stylesheet" href="~/css/resultado.css">;
+    }
+      else if("Dashboard".Equals(@Model.NomeView)){
+    <link rel="stylesheet" href="~/css/admin.css">;
+    }
+    else if("Erro".Equals(@Model.NomeView)){
+    <link rel="stylesheet" href="~/css/admin.css">;
+    }
+    
+</head>
+<body class="flex-conatiner">
+    <header>
+        <nav>
+            <div class="section-container">
+                <ul>
+                    <li id="bt-mobile-menu">
+
+                        <a href="javascript: void (0);" class="icon" onclick="toggleMobileMenu ()">
+                            <i class="fa fa-bars"> </i>
+                        </a>
+                    </li>
+                    <li class="bt-common-menu">
+                        <a onclick="toggleMobileMenu()" asp-controller="Home" asp-action="Index" class="active"> Home</a>
+                    </li>
+                    <li class="bt-common-menu">
+                        <a onclick="toggleMobileMenu()"href='@Url.Action("Index", "cadastro")'>Cadastro do cliente</a>
+                    </li>
+                    <li class="bt-common-menu">
+                        <a onclick="toggleMobileMenu()"href='@Url.Action("Index","galeria") '>Galeria</a>
+                    </li>
+                    <li class="bt-common-menu">
+                        <a onclick="toggleMobileMenu()" asp-controller="Evento" asp-action="Index">Cadastro do evento</a>
+                        </li>
+                    <li class="bt-common-menu">
+                        <a onclick="toggleMobileMenu()"href='@Url.Action("Index", "programação") '>Programação</a>
+                        </li>
+                            @if(string.IsNullOrEmpty(@Model.UsuarioEmail))
+                    {
+                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Login" asp-action="Index">Login do cliente</a></li>
+                    }
+                    else
+                    {
+                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Login" asp-action="Logoff">Logoff</a></li>
+                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Login" asp-action="Historico">Pedidos</a></li>
+                    }
+                </ul>
+               
+            </div>
+        </nav>
+        @if("Home".Equals(@Model.NomeView))
+        {
+        Html.RenderPartial("_HeaderHomePage");
+        }
+    </header>
+    @RenderBody()
+    <div id="pai">
+
+        <footer>
+            <a href="facebook"></a>
+            <div id="inscreve">
+                <a href="https://www.facebook.com/Rol%C3%AATop-106506047400870/?modal=admin_todo_tour">Se inscreva no
+                    facebook<img src="img/facebook-logo-2-1.jpg"> </a>
+            </div>
+            <div class="align-items: flex-end;">
+                <address>
+                    Avenida de Limeira, 539 - Campos Elíseos - SP
+                    <br />
+                    mcbonalds@email.com
+                    <br />
+                    11 1234 6789
+                </address>
+                <a href="#">Voltar para o topo!</a>
+            </div>
+        </footer>
+    </div>
+    <script>
+        function toggleMobileMenu() {
+            var ul = document.querySelector("nav ul");
+            var commonButtons = document.querySelectorAll("nav .bt-common-menu");
+            var icon = document.querySelector(".icon > i");
+
+            ul.classList.toggle("mobile-mode");
+
+            if (icon.classList.contains("fa-bars")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.remove("fa");
+
+                icon.classList.add("fas");
+                icon.classList.add("fa-skull");
+            } else {
+                icon.classList.remove("fas");
+                icon.classList.remove("fa-skull");
+
+                icon.classList.add("fa");
+                icon.classList.add("fa-bars");
+            }
+
+            for (var button of commonButtons) {
+                button.classList.toggle("active");
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

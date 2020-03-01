@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 namespace RoleTopMVC.Controllers {
     public class AbstractController : Controller {
         protected const string SESSION_CLIENTE_EMAIL = "Cliente_Email";

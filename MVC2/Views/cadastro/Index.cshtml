@@ -1,0 +1,45 @@
+ <main>
+        <nav>
+            <h2>Cadastro do cliente</h2>
+        </nav>
+                    
+        <form method="POST" id="fcontato" action='@Url.Action("CadastrarCliente","Cadastro")'>
+            <fieldset>
+                            
+                 <p>
+                    <label for="nome"> Nome completo:</label>
+                    <input type="text" name="nome" id="nome">
+                </p>
+                
+                <p>
+                    <label for="date"> Data de Nascimento:</label>
+                    <input type="date" name="date" id="date" placeholder="exemplo: 25/05/2002">
+                </p>
+                
+                <p>
+                    <label for="telefone"> Telefone:</label>
+                    <input type="text" name="telefone" id="telefone" placeholder="exemplo: 987.654.321.00">
+                </p>
+                
+                <p>
+                    <label for="cpf"> CPF ou CNPJ:</label>
+                    <input type="number" name="CPF" id="cpf" placeholder="exemplo: 987.654.321.00">
+                </p>
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Exemplo:roletop@email.com">
+                </p>
+                <p>
+                    <label for="senha"> Senha:</label>
+                    <input type="password" name="senha" id="senha" size="8" maxlength="8">
+                </p>
+            </fieldset>
+                <input class='center' type="submit" value="Entrar!" />
+        </form>
+    </div>
+            
+       
+                        
+            
+            
+</main>

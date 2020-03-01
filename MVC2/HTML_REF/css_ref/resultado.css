@@ -1,0 +1,141 @@
+body {
+  margin: 0%;
+  padding: 0%;
+}
+
+
+table, th, td {
+    border: 1px solid black;
+  }
+#dash td img{
+ padding: 7px;
+  width: 20px;
+  height: 20px;
+}
+
+#dash td {
+  height: 50px;
+  letter-spacing: bottom;
+}
+
+body {
+  background-color: #7d0093;
+}
+
+
+nav div ul li > img{
+  width: 60%;
+  padding: 0.2em;
+}
+nav div ul > li{
+  width: 100%;
+  text-align: center;
+}
+nav ul{
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  font-size: 1.5em;
+  font-family: 'Limelight', cursive;
+  align-items: flex-end;
+  justify-content: space-between;
+  list-style-type: none;
+  background-color: #ffc600;
+}
+
+nav img {
+  margin: auto;
+  width: 428px;
+  height: 313px;
+}
+
+nav img {
+  display: flex;
+  justify-content: center;
+}
+
+#fundao {
+  background-color: #7d0093;
+  background-image: url(img/login.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+address {
+    font-size: 1.5em;
+}
+
+address a {
+    text-align: center;
+}
+
+footer > div {
+  background-color: #ffc600
+}
+
+footer > div {
+  font-size: 0,5em;
+  justify-content: flex-end;
+}
+footer img {
+  width: 0,5px;
+  height: 0,5px;
+}
+
+footer {
+  background-color: #7d0093
+}
+
+footer a {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2em; 
+}
+#daletra {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2em;
+
+}
+
+#inscreve a img {
+  width: 2%;
+  height: 2%;
+}
+
+.pedidos {
+  color: white;
+  font-size: 2em;
+}
+
+#dash td img{
+    padding: 7px;
+     width: 20px;
+     height: 20px;
+   }
+
+   #dash td img{
+    padding: 7px;
+     width: 20px;
+     height: 20px;
+   }
+
+#dash {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+body{
+  font-family: 'Century Gothic', sans-serif;
+}
+
+.bt-common-menu a{
+  color: #fff;
+  text-decoration: none;
+}

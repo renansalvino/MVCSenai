@@ -1,0 +1,44 @@
+@model RoleTopMVC.ViewModels.HistoricoViewModels
+@{
+    ViewData["Title"] = "Eventos-RoleTop";
+    ViewData["H2"] = "Histórico de eventos";
+}
+<main>
+
+    <div id="dash"> 
+        
+    <table>
+        
+        <caption class="pedidos">Seu pedido</caption>
+        <tr>
+            <th>Nome Completo</th>
+            <th>Telefone</th>
+            <th>Tipos de Pedidos</th>
+            <th>Serviços adcionais</th>
+            <th>Observações do pedido</th>
+            <th>Valor Total</th>
+            <!-- <th>Aprovar</th> -->
+            
+        </tr>
+    @foreach (var pedido in Model.pedidos)
+    {
+        <tr>
+            <td>@pedido.Cliente.Nome</td>
+            <td>@pedido.Cliente.Telefone</td>
+            <td>@pedido.TipoEvento</td>
+            <td>@pedido.ListaDeProdutos</td>
+            <td>@pedido.Obs</td>
+            <td>@pedido.PrecoTotal</td>
+        </tr>
+    }
+                <!-- <div id="imagex"><img src="img/fotox.png"></div>
+                
+                <div id="imagev"><img src="img/correto.png"></div> -->
+            </td>
+        </tr>
+    </table>
+</div>
+
+    </div>
+</section>
+</main>

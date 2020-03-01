@@ -1,0 +1,62 @@
+@model RoleTopMVC.ViewModels.ServicosViewModel
+
+<main style="padding-bottom: 10em;">
+    <h2>Faça seu pedido, Sr.@Model.NomeUsuario!</h2>
+    <div class="evento">Cadastro do evento</div>
+
+    <form method="post" id="fcontato" action='@Url.Action("Registrar", "evento") '>
+        <fieldset>
+
+            <p>
+                <label for="cevento"> Nome do Evento:</label>
+                <input type="text" name="NomeEvento" id="cevento" placeholder="ex:Senai confraternização">
+            </p>
+
+            <p>
+                <label for="ctevento"> Tipo do evento:</label>
+                <select type="text" name="tipoevento" id="ctevento">
+                    <option value="Casamento">Casamento</option>
+                    <option value="Aniversário de Debutante">Debutante</option>
+                    <option value="Festa de empresas">Corporativo</option>
+                    <option value="Festa de Aniversário">Aniversário</option>
+                    <option value="Balada">Balada</option>
+                </select>
+
+                </select>
+
+            </p>
+
+            <p>
+                <label for="cdate"> Data do evento:</label>
+                <input type="date" name="dataevento" id="cdate" placeholder="exemplo: 25/05/2002">
+            </p>
+
+            <p>
+                <label for="cnumber">Número de convidados</label>
+                <input type="number" name="numeroconvidado" id="cnumber" placeholder="nº de convidados">
+            </p>
+            <p>
+                <label for="cobservacoes">Obs:</label>
+                <input type="text" name="observacoes" id="cobservacoes">
+            </p>
+            <div>
+                <label for="servicos">Valor de locaçâo do Rolê Top(R$10.000)</label>
+                </p>
+                <p>
+
+                    @foreach (var servico in @Model.servicos) {
+                    <input id="pacote-@(servico.Nome)" type="checkbox" value=@servico.Nome name="pacote">
+                    <label for="pacote-@(servico.Nome)">@servico.Nome por R$@servico.Preco</label>
+                    }
+                    </select>
+
+                </p>
+
+        </fieldset>
+
+        <input class='center' type="submit" value="Entrar!" />
+    </form>
+
+    </div>
+
+</main>
