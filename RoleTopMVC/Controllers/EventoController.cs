@@ -16,6 +16,7 @@ namespace RoleTopMVC.Controllers {
         PedidoRepository pedidoRepository = new PedidoRepository ();
         Cliente cliente = new Cliente ();
         public IActionResult Index () {
+            
             ServicosViewModel svm = new ServicosViewModel ();
             svm.pedidos = pedidoRepository.ObterTodos ();
             svm.servicos = servicoRepository.ObterTodos ();
