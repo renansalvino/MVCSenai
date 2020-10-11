@@ -203,7 +203,7 @@ address a {
         color: white;
     }
 }
-}
+
 @media (max-width: 485px) {
     #logoarea img {
         width: 200px;;
