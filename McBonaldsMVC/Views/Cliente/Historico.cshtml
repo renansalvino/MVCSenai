@@ -1,11 +1,20 @@
-@model McBonaldsMVC.ViewModels.HistoricoViewModel
+@model Hamburgueria_WebMVC.ViewModels.HistoricoViewModel
 @{
     ViewData["Title"] = "Pedidos - McBonald's";
     ViewData["H2"] = "Histórico de Pedidos";
 }
+<header>
+    @{
+        Html.RenderPartial("_HeaderNavBar");
+    }
+    <hgroup>
+        <h1>McBonald's</h1>
+    </hgroup>
+</header>
 
 <main>
     <h2>@ViewData["H2"]</h2>
+    <h3>Seu histórico:</h3>
     <table>
         <thead>
             <tr>
@@ -18,7 +27,7 @@
         <tbody>
             @foreach( var pedido in Model.Pedidos ) {
                 <tr>
-                    <td>@pedido.DataDoPedido</td>
+                    <td>@pedido.DataPedido</td>
                     <td>@pedido.Hamburguer.Nome</td>
                     <td>@pedido.Shake.Nome</td>
                     <td>@pedido.PrecoTotal</td>
@@ -26,4 +35,5 @@
             }
         </tbody>
     </table>
+
 </main>

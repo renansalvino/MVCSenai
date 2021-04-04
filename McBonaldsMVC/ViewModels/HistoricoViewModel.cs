@@ -1,12 +1,10 @@
 using System.Collections.Generic;
-using McBonaldsMVC.Models;
+using Hamburgueria_WebMVC.Models;
 
-namespace McBonaldsMVC.ViewModels
+namespace Hamburgueria_WebMVC.ViewModels
 {
-    public class HistoricoViewModel : BaseViewModel
+    public class HistoricoViewModel
     {
-        public List<Pedido> Pedidos {get;set;}
-        
-
+        public List<Pedido> Pedidos {get;set;}    
     }
 }

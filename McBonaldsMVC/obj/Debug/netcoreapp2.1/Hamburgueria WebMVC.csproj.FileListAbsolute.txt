@@ -1,0 +1,74 @@
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\bin\Debug\netcoreapp2.1\Hamburgueria WebMVC.deps.json
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\bin\Debug\netcoreapp2.1\Hamburgueria WebMVC.runtimeconfig.json
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\bin\Debug\netcoreapp2.1\Hamburgueria WebMVC.runtimeconfig.dev.json
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\bin\Debug\netcoreapp2.1\Hamburgueria WebMVC.dll
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\bin\Debug\netcoreapp2.1\Hamburgueria WebMVC.pdb
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\bin\Debug\netcoreapp2.1\Hamburgueria WebMVC.Views.dll
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\bin\Debug\netcoreapp2.1\Hamburgueria WebMVC.Views.pdb
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.csprojAssemblyReference.cache
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.AssemblyInfoInputs.cache
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.AssemblyInfo.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.csproj.CoreCompileInputs.cache
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.RazorAssemblyInfo.cache
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.RazorAssemblyInfo.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.TagHelpers.input.cache
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.TagHelpers.output.cache
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.RazorCoreGenerate.cache
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Razor\Views\Cadastro\Index.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Historico.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Login.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Razor\Views\Pedido\Index.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Falha.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Sucesso.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_HeaderNavBar.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.RazorTargetAssemblyInfo.cache
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.RazorTargetAssemblyInfo.cs
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.Views.pdb
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.dll
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.pdb
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.genruntimeconfig.cache
+C:\Users\marti\OneDrive\Área de Trabalho\Hamburgueria-McBonalds\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.csproj.CopyComplete
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\bin\Debug\netcoreapp2.1\Hamburgueria WebMVC.deps.json
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\bin\Debug\netcoreapp2.1\Hamburgueria WebMVC.runtimeconfig.json
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\bin\Debug\netcoreapp2.1\Hamburgueria WebMVC.runtimeconfig.dev.json
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\bin\Debug\netcoreapp2.1\Hamburgueria WebMVC.dll
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\bin\Debug\netcoreapp2.1\Hamburgueria WebMVC.pdb
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\bin\Debug\netcoreapp2.1\Hamburgueria WebMVC.Views.dll
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\bin\Debug\netcoreapp2.1\Hamburgueria WebMVC.Views.pdb
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.csprojAssemblyReference.cache
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.AssemblyInfoInputs.cache
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.AssemblyInfo.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.csproj.CoreCompileInputs.cache
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.RazorAssemblyInfo.cache
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.RazorAssemblyInfo.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.TagHelpers.input.cache
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.TagHelpers.output.cache
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.RazorCoreGenerate.cache
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Razor\Views\Cadastro\Index.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Historico.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Login.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Razor\Views\Pedido\Index.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Falha.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Sucesso.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_HeaderNavBar.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.RazorTargetAssemblyInfo.cache
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.RazorTargetAssemblyInfo.cs
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.Views.pdb
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.dll
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.pdb
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.genruntimeconfig.cache
+C:\Users\marti\OneDrive\Área de Trabalho\update\McBonaldsMVC\obj\Debug\netcoreapp2.1\Hamburgueria WebMVC.csproj.CopyComplete

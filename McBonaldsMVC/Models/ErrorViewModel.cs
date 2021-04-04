@@ -1,6 +1,6 @@
 using System;
 
-namespace McBonaldsMVC.Models
+namespace Hamburgueria_WebMVC.Models
 {
     public class ErrorViewModel
     {

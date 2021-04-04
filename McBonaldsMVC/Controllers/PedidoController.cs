@@ -1,134 +1,82 @@
-using System;
-using McBonaldsMVC.Enums;
-using McBonaldsMVC.Models;
-using McBonaldsMVC.Repositories;
-using McBonaldsMVC.ViewModels;
+using Hamburgueria_WebMVC.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Hamburgueria_WebMVC.Repositorios;
+using Hamburgueria_WebMVC.ViewModels;
+using Hamburgueria.Repositories;
 
-namespace McBonaldsMVC.Controllers {
-    public class PedidoController : AbstractController {
-        PedidoRepository pedidoRepository = new PedidoRepository ();
-        HamburguerRepository hamburguerRepository = new HamburguerRepository();
-        ShakeRepository shakeRepository = new ShakeRepository();
-        ClienteRepository clienteRepository = new ClienteRepository();
+namespace Hamburgueria_WebMVC.Controllers
+{
+    public class PedidoController : Controller
+    {
+        private ClienteRepository clienteRepository = new ClienteRepository();
+        private PedidoRepository Repositorio = new PedidoRepository();
+        private HamburguerRepositorio hamburguerRepositorio = new HamburguerRepositorio();
+        private ShakeRepositorio shakeRepositorio =  new ShakeRepositorio();
+        private const string SESSION_EMAIL = "_EMAIL";
+        private const string SESSION_CLIENTE = "_CLIENTE";
 
-        public IActionResult Index () {
+        [HttpGet]
+        public IActionResult Index()
+        {
+            var hamburgueres = hamburguerRepositorio.Listar();
+            var shakes = shakeRepositorio.Listar();
+            var cliente = clienteRepository.ObterPor(HttpContext.Session.GetString(SESSION_EMAIL));
 
-            PedidoViewModel pvm = new PedidoViewModel();
-            pvm.Hamburgueres = hamburguerRepository.ObterTodos();
-            pvm.Shakes = shakeRepository.ObterTodos();
+            PedidoViewModel pedido = new PedidoViewModel();
+            pedido.Hamburgueres = hamburgueres;
+            pedido.Shake = shakes;
 
-            var usuarioLogado = ObterUsuarioSession();
-            var nomeUsuarioLogado = ObterUsuarioNomeSession();
-            if (!string.IsNullOrEmpty(nomeUsuarioLogado))
-            {
-                pvm.NomeUsuario = nomeUsuarioLogado;
-            }
+            pedido.Cliente = cliente == null ? new Cliente() : cliente;
+            // if (cliente == null)
+            // {
+            //     pedido.Cliente = new Cliente();   
+            // }else
+            // {
+            //     pedido.Cliente = cliente;
+            // }
             
-            var clienteLogado = clienteRepository.ObterPor(usuarioLogado);
-            if (clienteLogado != null)
-            {
-                pvm.Cliente = clienteLogado;
-            }
-
-            pvm.NomeView = "Pedido";
-            pvm.UsuarioEmail = usuarioLogado;
-            pvm.UsuarioNome = nomeUsuarioLogado;
-
-            return View (pvm);
+            return View(pedido);
         }
 
-        public IActionResult Registrar (IFormCollection form) {
-            ViewData["Action"] = "Pedido";
-            Pedido pedido = new Pedido ();
+        [HttpPost]
+        public IActionResult RegistrarPedido(IFormCollection form){
+            // System.Console.WriteLine(form["nome"]);
+            // System.Console.WriteLine(form["endereco"]);
+            // System.Console.WriteLine(form["telefone"]);
+            // System.Console.WriteLine(form["email"]);
+            // System.Console.WriteLine(form["hamburguer"]);
+            // System.Console.WriteLine(form["shake"]);
 
-            var nomeShake = form["shake"];
-            Shake shake = new Shake ();
-            shake.Nome = nomeShake;
-            shake.Preco = shakeRepository.ObterPrecoDe(nomeShake);
+            Pedido pedido = new Pedido();
 
-            pedido.Shake = shake;
-
-            var nomeHamburguer = form["hamburguer"];
-            Hamburguer hamburguer = new Hamburguer (
-                nomeHamburguer, 
-                hamburguerRepository.ObterPrecoDe(nomeHamburguer));
-
-            pedido.Hamburguer = hamburguer;
-
-            Cliente cliente = new Cliente () {
-                Nome = form["nome"],
-                Endereco = form["endereco"],
-                Telefone = form["telefone"],
-                Email = form["email"]
-       
-            };
-
+            //FORMA UM
+            Cliente cliente = new Cliente();
+            cliente.Nome = form["nome"];
+            cliente.Endereco = form["endereco"];
+            cliente.Telefone = form["telefone"];
+            cliente.Email = form["email"];
             pedido.Cliente = cliente;
 
-            pedido.DataDoPedido = DateTime.Now;
+            //FORMA DOIS
+            Hamburguer hamburguer = new Hamburguer(
+                Nome: form["hamburguer"],
+                Preco: hamburguerRepositorio.ObterPreçoDe(form["hamburguer"])
+            );
+            pedido.Hamburguer = hamburguer;
 
-            pedido.PrecoTotal = hamburguer.Preco + shake.Preco;
+            //FORMA 3 - RESUM DA FORMA 1
+            Shake shake = new Shake(){
+                Nome = form["shake"],
+                Preco = shakeRepositorio.ObterPreçoDe(form["shake"])
+            };
+            pedido.Shake = shake;
+            pedido.PrecoTotal = pedido.Hamburguer.Preco + pedido.Shake.Preco;
 
-            if (pedidoRepository.Inserir (pedido)) {
-                return View ("Sucesso", new RespostaViewModel()
-                {
-                    NomeView = "Pedido",
-                    UsuarioEmail = ObterUsuarioSession(),
-                    UsuarioNome = ObterUsuarioNomeSession()
-                    
-                });
-            } else {
-                return View ("Erro", new RespostaViewModel()
-                {
-                    NomeView = "Pedido",
-                    UsuarioEmail = ObterUsuarioSession(),
-                    UsuarioNome = ObterUsuarioNomeSession()
-                });
-            }
-        }
+            Repositorio.Inserir(pedido);
+            ViewData["NomeView"] = "Pedido";
 
-        public IActionResult Aprovar(ulong id)
-        {
-      var pedido = pedidoRepository.ObterPor(id);
-      pedido.Status = (uint) StatusPedido.APROVADO;
-
-      if(pedidoRepository.Atualizar(pedido))
-      {
-          return RedirectToAction("Dashboard", "Administrador");
-      }
-      else
-      {
-          return View("Erro", new RespostaViewModel("Não foi possível aprovar este pedido")
-          {
-              NomeView = "Dashboard",
-              UsuarioEmail = ObterUsuarioSession(),
-              UsuarioNome = ObterUsuarioNomeSession()
-          });
-      }
-
-  }
-
-  public IActionResult Reprovar(ulong id)
-  {
-      var pedido = pedidoRepository.ObterPor(id);
-      pedido.Status = (uint) StatusPedido.REPROVADO;
-
-            if(pedidoRepository.Atualizar(pedido))
-            {
-                return RedirectToAction("Dashboard", "Administrador");
-            }
-            else
-            {
-                return View("Erro", new RespostaViewModel("Não foi possível reprovar este pedido")
-                {
-                    NomeView = "Dashboard",
-                    UsuarioEmail = ObterUsuarioSession(),
-                    UsuarioNome = ObterUsuarioNomeSession()
-                });
-            }
-
+            return View("Sucesso");
         }
     }
 }

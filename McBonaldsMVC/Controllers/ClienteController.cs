@@ -1,104 +1,40 @@
-using System;
-using McBonaldsMVC.Enums;
-using McBonaldsMVC.Repositories;
-using McBonaldsMVC.ViewModels;
+using Hamburgueria.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace McBonaldsMVC.Controllers
+namespace Hamburgueria_WebMVC.Controllers
 {
-    public class ClienteController : AbstractController
+    public class ClienteController : Controller
     {
-
         private ClienteRepository clienteRepository = new ClienteRepository();
-        private PedidoRepository pedidoRepository = new PedidoRepository();
+        private const string SESSION_EMAIL = "_EMAIL";
+        private const string SESSION_CLIENTE = "_CLIENTE";
 
         [HttpGet]
-        public IActionResult Login()
-        {
-            return View(new BaseViewModel()
-            {
-                NomeView = "Login",
-                UsuarioEmail = ObterUsuarioSession(),
-                UsuarioNome = ObterUsuarioNomeSession()
-            });
+        public IActionResult Login() {
+            return View();
         }
 
         [HttpPost]
-        public IActionResult Login(IFormCollection form)
-        {
-            ViewData["Action"] = "Login";
-            try
+        public IActionResult Login(IFormCollection form) {
+            var usuario = form["email"];
+            var senha = form["senha"];
+            var cliente = clienteRepository.ObterPor(usuario); //aq é email == "usuario"
+
+            if (cliente != null && cliente.Senha.Equals(senha))
             {
-                System.Console.WriteLine("==================");
-                System.Console.WriteLine(form["email"]);
-                System.Console.WriteLine(form["senha"]);
-                System.Console.WriteLine("==================");
-
-                var usuario = form["email"];
-                var senha = form["senha"];
-
-                var cliente = clienteRepository.ObterPor(usuario);
-
-                if(cliente != null)
-                {
-                    if(cliente.Senha.Equals(senha))
-                    {
-                        switch(cliente.TipoUsuario){
-                            case (uint) TiposUsuario.CLIENTE:
-                                HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario);
-                                HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
-                                HttpContext.Session.SetString(SESSION_CLIENTE_TIPO, cliente.TipoUsuario.ToString());
-                                
-                                return RedirectToAction("Historico","Cliente");
-                            
-                            default:
-                                HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario);
-                                HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
-                                HttpContext.Session.SetString(SESSION_CLIENTE_TIPO, cliente.TipoUsuario.ToString());
-                                
-                                return RedirectToAction("Dashboard","Administrador");
-                            
-                        }
-                    }
-                    else 
-                    {
-                        return View("Erro", new RespostaViewModel("Senha incorreta"));
-                    }
-
-                } 
-                else
-                {
-                    return View("Erro", new RespostaViewModel($"Usuário {usuario} não encontrado"));
-                }
-
+                HttpContext.Session.SetString(SESSION_EMAIL, usuario);//Funciona como um dicionario, (key,dado)
+                HttpContext.Session.SetString(SESSION_CLIENTE, cliente.Nome);
             }
-            catch (Exception e)
-            {
-                System.Console.WriteLine(e.StackTrace);
-                return View("Erro",new RespostaViewModel());
-            }
-        }
-    
-        public IActionResult Historico ()
-        {
-            var emailCliente = ObterUsuarioSession();
-            var pedidosCliente = pedidoRepository.ObterTodosPorCliente(emailCliente);
 
-            return View(new HistoricoViewModel()
-            {
-                Pedidos = pedidosCliente,
-                NomeView = "Histórico",
-                UsuarioEmail = ObterUsuarioSession(),
-                UsuarioNome = ObterUsuarioNomeSession()
-            });
+            return RedirectToAction("Index", "Home");
         }
 
-        public IActionResult Logoff()
-        {
-            HttpContext.Session.Remove(SESSION_CLIENTE_EMAIL);
-            HttpContext.Session.Remove(SESSION_CLIENTE_NOME);
+        public IActionResult Logout (){
+            HttpContext.Session.Remove(SESSION_EMAIL);
+            HttpContext.Session.Remove(SESSION_CLIENTE);
             HttpContext.Session.Clear();
+
             return RedirectToAction("Index", "Home");
         }
     }

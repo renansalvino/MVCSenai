@@ -1,22 +1,12 @@
 using System.Collections.Generic;
-using McBonaldsMVC.Models;
+using Hamburgueria_WebMVC.Models;
 
-namespace McBonaldsMVC.ViewModels
+namespace Hamburgueria_WebMVC.ViewModels
 {
-    public class PedidoViewModel : BaseViewModel
+    public class PedidoViewModel
     {
         public List<Hamburguer> Hamburgueres {get;set;}
-        public List<Shake> Shakes {get;set;}
-        public string NomeUsuario {get;set;}
+        public List<Shake> Shake {get;set;}   
         public Cliente Cliente {get;set;}
-
-        public PedidoViewModel()
-        {
-            this.Hamburgueres = new List<Hamburguer>();
-            this.Shakes = new List<Shake>();
-            this.NomeUsuario = "Jovem";
-            this.Cliente = new Cliente();
-        }
-
     }
 }

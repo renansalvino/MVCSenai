@@ -1,16 +1,15 @@
-namespace McBonaldsMVC.Models
-{
-    public class Hamburguer : Produto
-    {
-        public Hamburguer()
-        {
+using Microsoft.Extensions.Primitives;
 
+namespace Hamburgueria_WebMVC.Models {
+    public class Hamburguer : Produto {
+        public Hamburguer(StringValues Nome, double Preco)
+        {
+            this.Nome = Nome;
+            this.Preco = Preco;
         }
 
-        public Hamburguer(string nome, double preco)
+        public Hamburguer() // CONTRUTOR VAZIO, NÃO REMOVE-LO
         {
-            this.Nome = nome;
-            this.Preco = preco;
         }
     }
 }
